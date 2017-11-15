@@ -1,0 +1,25 @@
+<subsystem xmlns="urn:jboss:domain:datasources:1.2">
+	<datasources>
+		<datasource jndi-name="java:jboss/datasources/CatalogDS"
+			pool-name="CatalogDS" enabled="true" use-java-context="true">
+			<connection-url>jdbc:postgresql://172.17.0.1:5433/catalog</connection-url>
+			<driver>postgresql</driver>
+			<security>
+				<user-name>jasingh</user-name>
+				<password>123456</password>
+			</security>
+			<validation>
+				<valid-connection-checker
+					class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker" />
+				<background-validation>true</background-validation>
+				<exception-sorter
+					class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter" />
+			</validation>
+		</datasource>
+		<drivers>
+			<driver name="postgresql" module="org.postgresql">
+				<xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
+			</driver>
+		</drivers>
+	</datasources>
+                
