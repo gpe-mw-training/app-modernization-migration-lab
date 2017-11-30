@@ -49,4 +49,14 @@ curl -XGET http://127.0.0.1:8080/monolith-coolstore/rest/cart/222
 curl -XPOST -H "Content-Type: application/json" -d '{"itemId":"322","name":"curl","description":"Red Fedora Official Red Hat Fedora","price":34.99}' http://127.0.0.1:8080/monolith-coolstore/rest/catalog/
 ```
 
-#### Windup 
+## Redhat Application Migration Toolkit(AMT)
+version:  4.0.0.Beta4
+
+#### RHAMT command
+```
+ ./rhamt-cli --input ../monolith-coolstore/target/monolith-coolstore.war   --output ./output/monolith/ - --target eap:7 --target cloud-readiness  --packages com.redhat.coolstore
+```
+
+##### TODO
+* In cart initialise infinispan cache, at present hashmap being used as in default case.
+*
