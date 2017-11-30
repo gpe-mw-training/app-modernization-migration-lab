@@ -52,7 +52,8 @@ curl -XPOST -H "Content-Type: application/json" -d '{"itemId":"322","name":"curl
 ## Redhat Application Migration Toolkit(AMT)
 version:  4.0.0.Beta4
 
-#### Copy the custom xml rule `proprietary-servlet-annotations.windup.xml` to `WINDUP_RULES_DIR`. where `WINDUP_RULES_DIR` is `${user.home}/.windup/rules/` 
+#### XML Rule
+Copy the custom xml rule `proprietary-servlet-annotations.windup.xml` to `WINDUP_RULES_DIR`. where `WINDUP_RULES_DIR` is `${user.home}/.windup/rules/` 
 
 #### RHAMT command
 ```
