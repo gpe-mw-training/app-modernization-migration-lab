@@ -52,9 +52,11 @@ curl -XPOST -H "Content-Type: application/json" -d '{"itemId":"322","name":"curl
 ## Redhat Application Migration Toolkit(AMT)
 version:  4.0.0.Beta4
 
+#### Copy the custom xml rule `proprietary-servlet-annotations.windup.xml` to `WINDUP_RULES_DIR`. where `WINDUP_RULES_DIR` is `${user.home}/.windup/rules/` 
+
 #### RHAMT command
 ```
- ./rhamt-cli --input ../monolith-coolstore/target/monolith-coolstore.war   --output ./output/monolith/ - --target eap:7 --target cloud-readiness  --packages com.redhat.coolstore
+ ./bin/rhamt-cli --input  ~/projects/gpe-mw-training/app-modernization-migration-lab/monolith-coolstore-app/target/monolith-coolstore-app.war   --output ~/projects/gpe-mw-training/app-modernization-migration-lab/windup/output/war   --target eap:7   --target cloud-readiness --packages com.redhat.coolstore
 ```
 
 ##### TODO
