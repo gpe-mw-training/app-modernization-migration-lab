@@ -17,7 +17,7 @@
     <rules>
         <rule id="proprietary-servlet-annotations-01000">
             <when>
-                <javaclass references="com.example.proprietary.customannotation.ProprietaryServlet" as="default">
+                <javaclass references="com.example.proprietary.customAnnotation.ProprietaryServlet" as="default">
                     <location>ANNOTATION</location>
                 </javaclass>
             </when>
@@ -34,7 +34,7 @@
         </rule>
         <rule id="proprietary-servlet-annotations-02000">
             <when>
-                <javaclass references="com.example.proprietary.customannotation.ProprietaryInitParam"  as="default">
+                <javaclass references="com.example.proprietary.customAnnotation.ProprietaryInitParam"  as="default">
                     <location>ANNOTATION</location>
                 </javaclass>
             </when>
@@ -49,22 +49,5 @@
                 </hint>
             </perform>
         </rule>
-        <rule id="proprietary-servlet-annotations-03000">
-            <when>
-                <javaclass references="com.example.proprietary.customannotation.ProprietaryFilter" as="default">
-                    <location>ANNOTATION</location>
-                </javaclass>
-            </when>
-            <perform>
-                <hint title="ProprietaryFilter annotation" effort="3" category-id="mandatory">
-                    <message>Replace the proprietary @ProprietaryFilter annotation with the Java EE 6 standard @WebFilter annotation.</message>
-                </hint>
-                <hint title="Standard Java EE 6 annotations">
-                    <message>See the javax.servlet.annotation JavaDoc for more information.</message>
-                    <link href="http://docs.oracle.com/javaee/6/api/javax/servlet/annotation/package-summary.html"
-                        title="Java EE 6 Servlet annotation package summary" />
-                </hint>
-            </perform>
-        </rule>
-    </rules>
+   </rules>
 </ruleset>
