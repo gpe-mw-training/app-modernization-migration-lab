@@ -7,20 +7,20 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.redhat.coolstore.model.Inventory;
+import com.redhat.coolstore.model.InventoryEntity;
 
 @Stateless
 public class InventoryService {
 
-	@PersistenceContext(unitName="inventory")
+	@PersistenceContext(unitName="coolstore")
 	private EntityManager em;
 
 	public InventoryService() {
 
 	}
 	
-	public Inventory getInventory(String itemId) {
-		Inventory inventory = em.find(Inventory.class,itemId);
+	public InventoryEntity getInventory(String itemId) {
+		InventoryEntity inventory = em.find(InventoryEntity.class,itemId);
 		return inventory;
 	}
 }

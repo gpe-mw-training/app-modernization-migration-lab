@@ -15,13 +15,10 @@ import javax.ws.rs.core.MediaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.redhat.coolstore.model.Inventory;
+import com.redhat.coolstore.model.InventoryEntity;
 import com.redhat.coolstore.service.inventory.InventoryService;
 
-import com.example.proprietary.customannotation.ProprietaryInitParam;
-import com.example.proprietary.customannotation.ProprietaryServlet;
 
-@ProprietaryServlet(name="FOO", runAs="SuperUser", initParams = { @ProprietaryInitParam (name="one", value="1") }, mapping = {"/foo/*"})
 @RequestScoped
 @Path("/inventory")
 public class InventoryResource implements Serializable {
@@ -36,7 +33,7 @@ public class InventoryResource implements Serializable {
 	@GET
 	@Path("{itemId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Inventory getAvailability(@PathParam("itemId") String itemId) {
+	public InventoryEntity getAvailability(@PathParam("itemId") String itemId) {
 		LOGGER.debug("Calling the inventory service");
 		return inventoryService.getInventory(itemId);
 	}

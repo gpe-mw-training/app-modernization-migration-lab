@@ -9,9 +9,12 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.example.proprietary.customAnnotation.ProprietaryInitParam;
+import com.example.proprietary.customAnnotation.ProprietaryServlet;
 import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.service.catalog.CatalogService;
 
+@ProprietaryServlet(name="catalog", runAs="SuperUser", initParams = { @ProprietaryInitParam (name="catalog", value="spring") }, mapping = {"/catalog/*"})
 @SessionScoped
 @Path("/catalog")
 @Consumes(MediaType.APPLICATION_JSON)

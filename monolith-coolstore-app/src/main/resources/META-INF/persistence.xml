@@ -14,8 +14,8 @@
 	xsi:schemaLocation="
         http://xmlns.jcp.org/xml/ns/persistence
         http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="inventory">
-		<jta-data-source>java:jboss/datasources/InventoryDS</jta-data-source>
+	<persistence-unit name="coolstore">
+		<jta-data-source>java:jboss/datasources/CoolstoreDS</jta-data-source>
 		<properties>
 			<!-- Properties for Hibernate -->
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
@@ -25,7 +25,7 @@
 		</properties>
 	</persistence-unit>
 
-	<persistence-unit name="catalog">
+	<!-- <persistence-unit name="catalog">
 		<jta-data-source>java:jboss/datasources/CatalogDS</jta-data-source>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
@@ -35,5 +35,5 @@
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 		</properties>
 
-	</persistence-unit>
+	</persistence-unit> -->
 </persistence>

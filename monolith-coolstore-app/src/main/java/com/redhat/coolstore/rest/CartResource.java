@@ -19,12 +19,14 @@ import javax.ws.rs.core.MediaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.example.proprietary.customAnnotation.ProprietaryInitParam;
+import com.example.proprietary.customAnnotation.ProprietaryServlet;
 import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.model.ShoppingCart;
 import com.redhat.coolstore.model.ShoppingCartItem;
 import com.redhat.coolstore.service.cart.ShoppingCartService;
 
-
+@ProprietaryServlet(name="cart", runAs="SuperUser", initParams = { @ProprietaryInitParam (name="cart", value="spring") }, mapping = {"/cart/*"})
 @RequestScoped
 @Path("/cart")
 public class CartResource implements Serializable {

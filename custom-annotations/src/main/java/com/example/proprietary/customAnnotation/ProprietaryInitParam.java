@@ -1,4 +1,4 @@
-package com.example.proprietary.customannotation;
+package com.example.proprietary.customAnnotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
