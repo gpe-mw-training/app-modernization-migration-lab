@@ -21,40 +21,22 @@
 
 	<groupId>com.redhat.coolstore</groupId>
 	<artifactId>monolith-coolstore-app</artifactId>
-	<version>6.3.0.GA</version>
+	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>monolith-coolstore-app</name>
 	<description>monolith-coolstore-app</description>
 
 	<properties>
-		<version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
-		<version.jboss.spec.javaee.6.0>3.0.2.Final-redhat-13</version.jboss.spec.javaee.6.0>
+	    <version.jboss.eap>6.4.18.GA</version.jboss.eap>
 		<version.war.plugin>2.1.1</version.war.plugin>
-		<version.postgresql>42.0.0</version.postgresql>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- Define the version of JBoss' Java EE 6 APIs we want to import. Any 
-				dependencies from org.jboss.spec will have their version defined by this 
-				BOM -->
-			<!-- JBoss distributes a complete set of Java EE 6 APIs including a Bill 
-				of Materials (BOM). A BOM specifies the versions of a "stack" (or a collection) 
-				of artifacts. We use this here so that we always get the correct versions 
-				of artifacts. Here we use the jboss-javaee-6.0 stack (you can read this as 
-				the JBoss stack of the Java EE 6 APIs). You can actually use this stack with 
-				any version of JBoss EAP that implements Java EE 6. -->
-			<dependency>
-				<groupId>org.jboss.spec</groupId>
-				<artifactId>jboss-javaee-6.0</artifactId>
-				<version>${version.jboss.spec.javaee.6.0}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
 			<dependency>
 				<groupId>org.jboss.bom.eap</groupId>
 				<artifactId>jboss-javaee-6.0-with-tools</artifactId>
-				<version>${project.version}</version>
+				<version>${version.jboss.eap}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -63,8 +45,6 @@
 
 	<dependencies>
 
-		<!-- Import the CDI API, we use provided scope as the API is included in 
-			JBoss EAP 6 -->
 		<dependency>
 			<groupId>javax.enterprise</groupId>
 			<artifactId>cdi-api</artifactId>
@@ -78,15 +58,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Import the JAX-RS API, we use provided scope as the API is included 
-			in JBoss EAP 6 -->
-		<dependency>
-			<groupId>org.jboss.spec.javax.ws.rs</groupId>
-			<artifactId>jboss-jaxrs-api_1.1_spec</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
-
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-jaxrs</artifactId>
@@ -98,7 +69,6 @@
 			<version>2.1.4</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/javax/javaee-web-api -->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
@@ -106,7 +76,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.infinispan/infinispan-client-hotrod -->
 		<dependency>
 			<groupId>org.infinispan</groupId>
 			<artifactId>infinispan-client-hotrod</artifactId>
@@ -141,13 +110,6 @@
 
 	<profiles>
 		<profile>
-			<!-- When built in OpenShift the 'openshift' profile will be used when 
-				invoking mvn. -->
-			<!-- Use this profile for any OpenShift specific customization your app 
-				will need. -->
-			<!-- By default that is to put the resulting archive into the 'deployments' 
-				folder. -->
-			<!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
 			<id>openshift</id>
 			<build>
 				<plugins>
