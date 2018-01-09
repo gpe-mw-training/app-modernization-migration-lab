@@ -44,7 +44,6 @@ public class CatalogResource implements Serializable {
     @POST
     @Path("/")
     public Response add(Product product) {
-    	System.out.println(product);
         catalogService.add(product);
         return Response.ok().build();
     }
