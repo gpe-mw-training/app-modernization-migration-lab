@@ -4,7 +4,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
 
-//@ProprietaryServlet(name="FOO", runAs="SuperUser", initParams = { @ProprietaryInitParam (name="one", value="1") }, mapping = {"/foo/*"})
+//@ProprietaryServlet(name="cart", runAs="SuperUser", initParams = { @ProprietaryInitParam (name="one", value="1") }, mapping = {"/cart/*"})
 @Target(ElementType.TYPE)
 public @interface ProprietaryServlet {
 	String name() default "";
