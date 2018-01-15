@@ -35,14 +35,14 @@ public class CatalogService {
 		return em.find(Product.class,itemId);
 	}
 
-	public void add(Product product) {
+	public void addProduct(Product product) {
 		em.persist(product);
 		
 	}
 
-	public void addAll(List<Product> products) {
+	public void addProducts(List<Product> products) {
 		for (Product product : products) {
-			add(product);
+			addProduct(product);
 		}
 	}
 
