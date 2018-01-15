@@ -1,0 +1,1 @@
+insert into PRODUCT_CATALOG (itemId, name, description, price ) values ('123456', 'Redhat','Red Fedora Official Red Hat Fedora', 34.99)
