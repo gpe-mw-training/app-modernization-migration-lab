@@ -19,12 +19,21 @@ public class ShoppingCartService {
 
     private static final Logger LOG = LoggerFactory.getLogger(ShoppingCartService.class);
 
-    @Inject
-    CatalogService catalogServie;
+    //@Inject
+    private CatalogService catalogService;
 
     @Inject
     private PriceCalculationService priceCalculationService;
+    
+    @Inject
+    public ShoppingCartService( CatalogService catalogServie){
+    	this.catalogService = catalogServie;
+    }
 
+    public ShoppingCartService() {
+    	
+    }
+    
     Map<String, ShoppingCart> carts=new HashMap<String, ShoppingCart>();;
 
     Map<String, Product> productMap = new HashMap<String, Product>();
@@ -43,7 +52,7 @@ public class ShoppingCartService {
     public Product getProduct(String itemId) {
     	Product product = productMap.get(itemId);
         if (product == null) {
-            product = catalogServie.getProduct(itemId);
+            product = catalogService.getProduct(itemId);
             productMap.put(itemId, product);
         }
         return product;
@@ -78,7 +87,7 @@ public class ShoppingCartService {
     }
 
    
-    public ShoppingCart addToCart(String cartId, String itemId, int quantity) throws Exception {
+    public ShoppingCart addToCart(String cartId, String itemId, int quantity) {
         ShoppingCart cart = getShoppingCart(cartId);
         Product product = getProduct(itemId);
 

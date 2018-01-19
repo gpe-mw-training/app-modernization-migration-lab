@@ -1,13 +1,10 @@
-package com.redhat.coolstore.inventory.service;
+package com.redhat.coolstore.service.catalog;
 
+import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.CoreMatchers.hasItem;
-import static org.hamcrest.CoreMatchers.allOf;
-
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,13 +13,16 @@ import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 
+import org.hamcrest.core.AnyOf;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
+import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.internal.matchers.ContainsExtraTypeInformation;
 
 import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.service.catalog.CatalogService;
@@ -41,7 +41,7 @@ public class CatalogServiceTest {
                     .addPackages(false, Product.class.getPackage())
                     .addAsResource("META-INF/test-persistence.xml",  "META-INF/persistence.xml")
                     .addAsWebInfResource("test-ds.xml", "test-ds.xml")
-                    .addAsWebInfResource("beans.xml","beans.xml")
+                    .addAsWebInfResource(EmptyAsset.INSTANCE,"beans.xml")
                     .addAsResource("test-catalog.sql",  "test-coolstore.sql");
     }
     
@@ -68,7 +68,7 @@ public class CatalogServiceTest {
     	p.setDescription("productDescription1");
     	p.setItemId("999999");
     	p.setName("productName1");
-    	p.setPrice(100.0);
+    	p.setPrice(99.0);
     	catalogService.addProduct(p);
     	assertThat(catalogService.getProduct("999999").getName(),is("productName1"));
     }
@@ -99,11 +99,8 @@ public class CatalogServiceTest {
          Set<String> itemIds = catalogService.getProducts().stream().filter(p -> p.getPrice() == 100.0).
         		 map(p -> p.getItemId()).
         		 collect(Collectors.toSet());
-         
         assertThat(itemIds.size(),is(2));
-        assertThat(itemIds,allOf(hasItem(itemId1),hasItem(itemId2)));
-         
-    	
+        assertThat(itemIds, anyOf(is(itemId1),is(itemId2)));
     }
 }
 
