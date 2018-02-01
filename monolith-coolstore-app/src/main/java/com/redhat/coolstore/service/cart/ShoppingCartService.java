@@ -19,20 +19,11 @@ public class ShoppingCartService {
 
     private static final Logger LOG = LoggerFactory.getLogger(ShoppingCartService.class);
 
-    //@Inject
+    @Inject
     private CatalogService catalogService;
 
     @Inject
     private PriceCalculationService priceCalculationService;
-    
-    @Inject
-    public ShoppingCartService( CatalogService catalogServie){
-    	this.catalogService = catalogServie;
-    }
-
-    public ShoppingCartService() {
-    	
-    }
     
     Map<String, ShoppingCart> carts=new HashMap<String, ShoppingCart>();;
 

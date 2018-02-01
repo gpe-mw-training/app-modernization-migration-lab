@@ -22,7 +22,6 @@ import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.internal.matchers.ContainsExtraTypeInformation;
 
 import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.service.catalog.CatalogService;
