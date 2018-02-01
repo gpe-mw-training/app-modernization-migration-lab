@@ -22,8 +22,8 @@ public class MockCatalogService extends CatalogService{
 		mockProducts = new HashMap<>();
 		mockProducts.put("123456", new Product("123456", "productName", "productDescription", 200.0));
 		mockProducts.put("p1",new Product("p1", "productName1", "productDescription1", 100.0));
-		mockProducts.put("p1",new Product("p2", "productName3", "productDescription2", 200.0));
-		mockProducts.put("p1",new Product("p3", "productName3", "productDescription3", 300.0));
+		mockProducts.put("p2",new Product("p2", "productName3", "productDescription2", 200.0));
+		mockProducts.put("p3",new Product("p3", "productName3", "productDescription3", 300.0));
 	}
 
 	public List<Product> getProducts() {

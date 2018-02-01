@@ -51,8 +51,7 @@ public class ShoppingCartServiceTest {
 
 	@Test
 	public void testAddtoCart() {
-		ShoppingCart sc = shoppingCartService.addToCart("123456", "p1", 1);
-
+		ShoppingCart sc = shoppingCartService.addToCart("999", "p1", 1);
 		assertThat(sc.getShoppingCartItemList().size(), equalTo(1));
 		assertThat(sc.getCartItemTotal(), equalTo(100.0));
 
@@ -66,24 +65,26 @@ public class ShoppingCartServiceTest {
 
 	@Test
 	public void testDeleteItemFromCart() {
-		ShoppingCart sc = shoppingCartService.deleteItem("123456", "p2", 2);
+		ShoppingCart s = shoppingCartService.addToCart("998", "p2", 3);
+		
+		ShoppingCart sc = shoppingCartService.deleteItem("998", "p2", 2);
+		
 		assertThat(sc.getShoppingCartItemList().size(), equalTo(1));
+		
 		ShoppingCartItem sci = sc.getShoppingCartItemList().get(0);
-		System.out.println("======================================================="+sci);
 		assertThat(sci.getProduct(), notNullValue());
 		assertThat(sci.getProduct().getItemId(), equalTo("p2"));
 		assertThat(sci.getProduct().getPrice(), equalTo(200.0));
 		assertThat(sci.getPrice(), equalTo(200.0));
-		assertThat(sci.getQuantity(), equalTo(2));
+		assertThat(sci.getQuantity(), equalTo(1));
 	}
 
 	@Test
     public void testCheckout() {
-        shoppingCartService.addToCart("123456", "p3", 3);
-        ShoppingCart sc = shoppingCartService.checkout("123456");
-        System.out.println("======================================================="+sc);
+        shoppingCartService.addToCart("997", "p3", 3);
+        ShoppingCart sc = shoppingCartService.checkout("997");
         assertThat(sc, notNullValue());
-        assertThat(sc.getCartId(), equalTo("123456"));
+        assertThat(sc.getCartId(), equalTo("997"));
         assertThat(sc.getCartItemTotal(), equalTo(0.0));
         assertThat(sc.getShippingTotal(), equalTo(0.0));
         assertThat(sc.getCartTotal(), equalTo(0.0));
