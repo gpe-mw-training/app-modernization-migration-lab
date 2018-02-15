@@ -1,19 +1,13 @@
 package com.redhat.coolstore.rest;
 
-import java.io.Serializable;
-
-
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
+import javax.ws.rs.NotFoundException;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.redhat.coolstore.model.InventoryEntity;
 import com.redhat.coolstore.service.inventory.InventoryService;
@@ -21,11 +15,7 @@ import com.redhat.coolstore.service.inventory.InventoryService;
 
 @RequestScoped
 @Path("/inventory")
-public class InventoryResource implements Serializable {
-
-	private static final long serialVersionUID = -7227732980791688773L;
-	
-	private static final Logger LOGGER = LoggerFactory.getLogger(InventoryResource.class);
+public class InventoryResource  {
 
 	@Inject
 	private InventoryService inventoryService;
@@ -33,9 +23,14 @@ public class InventoryResource implements Serializable {
 	@GET
 	@Path("{itemId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public InventoryEntity getAvailability(@PathParam("itemId") String itemId) {
-		LOGGER.debug("Calling the inventory service");
-		return inventoryService.getInventory(itemId);
+	public InventoryEntity getInventory(@PathParam("itemId") String itemId) {
+		InventoryEntity inventory = inventoryService.getInventory(itemId);
+		if (inventory == null) {
+			throw new NotFoundException();
+		} else {
+			return inventory;
+		}
+
 	}
 
 }
