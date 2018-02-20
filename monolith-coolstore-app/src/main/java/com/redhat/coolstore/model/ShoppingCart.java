@@ -10,11 +10,7 @@ public class ShoppingCart implements Serializable {
 
 	private double cartItemTotal;
 
-	private double cartItemPromoSavings;
-	
 	private double shippingTotal;
-	
-	private double shippingPromoSavings;
 	
 	private double cartTotal;
 
@@ -97,29 +93,11 @@ public class ShoppingCart implements Serializable {
 		this.cartTotal = cartTotal;
 	}
 
-	public double getCartItemPromoSavings() {
-		return cartItemPromoSavings;
-	}
-
-	public void setCartItemPromoSavings(double cartItemPromoSavings) {
-		this.cartItemPromoSavings = cartItemPromoSavings;
-	}
-
-	public double getShippingPromoSavings() {
-		return shippingPromoSavings;
-	}
-
-	public void setShippingPromoSavings(double shippingPromoSavings) {
-		this.shippingPromoSavings = shippingPromoSavings;
-	}
-
 	@Override
 	public String toString() {
 		return "ShoppingCart [cartId=" + cartId
 				+ ", cartItemTotal=" + cartItemTotal
-				+ ", cartItemPromoSavings=" + cartItemPromoSavings
 				+ ", shippingTotal=" + shippingTotal
-				+ ", shippingPromoSavings=" + shippingPromoSavings
 				+ ", cartTotal=" + cartTotal + ", shoppingCartItemList="
 				+ shoppingCartItemList + "]";
 	}

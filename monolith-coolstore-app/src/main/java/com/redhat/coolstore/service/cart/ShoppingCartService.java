@@ -17,8 +17,6 @@ import java.util.Map;
 @Stateless
 public class ShoppingCartService {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ShoppingCartService.class);
-
     @Inject
     private CatalogService catalogService;
 
@@ -83,7 +81,6 @@ public class ShoppingCartService {
         Product product = getProduct(itemId);
 
         if (product == null) {
-            LOG.warn("Invalid product {} request to get added to the shopping cart. No product added", itemId);
             return cart;
         }
 
@@ -102,6 +99,7 @@ public class ShoppingCartService {
 
     public ShoppingCart calculateCartPrice(ShoppingCart sc) {
         priceCalculationService.priceShoppingCart(sc);
+        carts.put(sc.getCartId(), sc);
         return sc;
     }
 }

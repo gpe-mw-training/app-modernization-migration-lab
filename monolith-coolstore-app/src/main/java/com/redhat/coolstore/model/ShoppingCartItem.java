@@ -8,7 +8,6 @@ public class ShoppingCartItem implements Serializable {
 
 	private double price;
 	private int quantity;
-	private double promoSavings;
 	private Product product;
 	
 	public ShoppingCartItem() {
@@ -39,18 +38,10 @@ public class ShoppingCartItem implements Serializable {
 		this.quantity = quantity;
 	}
 
-	public double getPromoSavings() {
-		return promoSavings;
-	}
-
-	public void setPromoSavings(double promoSavings) {
-		this.promoSavings = promoSavings;
-	}
-
 	@Override
 	public String toString() {
 		return "ShoppingCartItem [price=" + price + ", quantity=" + quantity
-				+ ", promoSavings=" + promoSavings + ", product=" + product
+				+ ", product=" + product
 				+ "]";
 	}
 		

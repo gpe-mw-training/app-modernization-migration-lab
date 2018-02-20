@@ -40,13 +40,4 @@ public class CatalogService {
 		
 	}
 
-	public void addProducts(List<Product> products) {
-		for (Product product : products) {
-			addProduct(product);
-		}
-	}
-
-
-
-
 }
