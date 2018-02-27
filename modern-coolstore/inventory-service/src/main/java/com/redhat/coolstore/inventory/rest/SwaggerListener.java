@@ -30,13 +30,13 @@ public class SwaggerListener implements ServletContextListener {
         BeanConfig beanConfig = new BeanConfig();
         beanConfig.setVersion("1.0.0");
         beanConfig.setSchemes(new String[] { "http" });
-        beanConfig.setTitle("Monolith Coolstore REST API");
-        beanConfig.setDescription("Operations that can be invoked in the coolstore monolith");
-        beanConfig.setResourcePackage("com.redhat.coolstore.rest");
+        beanConfig.setTitle("Inventory Service REST API");
+        beanConfig.setDescription("Operations that can be invoked in the inventory service");
+        beanConfig.setResourcePackage("com.redhat.coolstore.inventory.rest");
         beanConfig.setLicense("Apache 2.0");
         beanConfig.setLicenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html");
         beanConfig.setContact("developer@redhat.com");
-        beanConfig.setBasePath("/rest");
+        beanConfig.setBasePath("/api");
         beanConfig.setPrettyPrint(true);
         beanConfig.setScan(true);
     }
