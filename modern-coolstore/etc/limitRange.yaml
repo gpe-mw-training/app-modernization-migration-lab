@@ -5,22 +5,22 @@ metadata:
 spec:
   limits:
   - max:
-      cpu: "10"
+      cpu: "5"
       memory: 350Mi
     min:
       cpu: 500m
       memory: 6Mi
     type: Pod
   - default:
-      cpu: "2"
+      cpu: "1"
       memory: 100Mi
     defaultRequest:
-      cpu: "1"
+      cpu: 100m
       memory: 50Mi
     max:
-      cpu: "8"
+      cpu: "5"
       memory: 350Mi
     min:
-      cpu: 500m
+      cpu: 50m
       memory: 4Mi
     type: Container  
