@@ -87,6 +87,8 @@ objects:
           resources:
             limits:
               memory: 512Mi
+            requests:
+              memory: 100Mi
           volumeMounts:
           - mountPath: /var/lib/pgsql/data
             name: gogs-postgres-data
