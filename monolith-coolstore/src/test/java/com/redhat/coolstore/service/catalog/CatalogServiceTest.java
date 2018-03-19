@@ -75,7 +75,6 @@ public class CatalogServiceTest {
     @Test
     public void testAddProducts() {
     	assertThat(catalogService, notNullValue());
-    	List<Product> listProducts = new ArrayList<Product>();
     	
     	String itemId1 = "999998";
     	Product p1 = new Product();
@@ -83,7 +82,7 @@ public class CatalogServiceTest {
     	p1.setItemId(itemId1);
     	p1.setName("productName1");
     	p1.setPrice(100.0);
-    	listProducts.add(p1);
+    	catalogService.addProduct(p1);
     	
     	String itemId2 = "111111";
     	Product p2 = new Product();
@@ -91,9 +90,8 @@ public class CatalogServiceTest {
     	p2.setItemId(itemId2);
     	p2.setName("productName2");
     	p2.setPrice(100.0);
-    	listProducts.add(p2);
     	
-    	catalogService.addProducts(listProducts);;
+    	catalogService.addProduct(p2);
     	
          Set<String> itemIds = catalogService.getProducts().stream().filter(p -> p.getPrice() == 100.0).
         		 map(p -> p.getItemId()).

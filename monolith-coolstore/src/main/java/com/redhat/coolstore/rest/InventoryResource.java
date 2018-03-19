@@ -3,7 +3,6 @@ package com.redhat.coolstore.rest;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
-import javax.ws.rs.NotFoundException;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -25,12 +24,7 @@ public class InventoryResource  {
 	@Produces(MediaType.APPLICATION_JSON)
 	public InventoryEntity getInventory(@PathParam("itemId") String itemId) {
 		InventoryEntity inventory = inventoryService.getInventory(itemId);
-		if (inventory == null) {
-			throw new NotFoundException();
-		} else {
-			return inventory;
-		}
-
+		return inventory;
 	}
 
 }
