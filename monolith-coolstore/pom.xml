@@ -19,10 +19,10 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>monolith-coolstore-app</artifactId>
+	<artifactId>monolith-coolstore</artifactId>
 	<packaging>war</packaging>
-	<name>monolith-coolstore-app</name>
-	<description>monolith-coolstore-app</description>
+	<name>monolith-coolstore</name>
+	<description>monolith-coolstore</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

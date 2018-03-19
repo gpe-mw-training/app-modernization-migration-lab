@@ -16,7 +16,7 @@
 
 	<modules>
 		<module>custom-annotations</module>
-		<module>monolith-coolstore-app</module>
+		<module>monolith-coolstore</module>
 	</modules>
   <dependencies>
     <dependency>
