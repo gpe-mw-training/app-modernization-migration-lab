@@ -12,11 +12,20 @@ import javax.ws.rs.core.Response;
 import com.redhat.coolstore.catalog.model.Product;
 import com.redhat.coolstore.catalog.service.CatalogService;
 import javax.ws.rs.NotFoundException;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 @RequestScoped
 @Path("/catalog")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
+@Api(
+		value = "The catalog service",
+		description = "This API will list all catalog items",
+		produces = MediaType.APPLICATION_JSON,
+		basePath = "/catalog"
+		)
 public class CatalogResource implements Serializable {
 
 	/**
@@ -29,13 +38,19 @@ public class CatalogResource implements Serializable {
 
 	@GET
 	@Path("/products")
+	@ApiOperation(
+			value = "Retrieve all catalog items"	            
+			)
 	public List<Product> listAll() {
 		return catalogService.getProducts();
 	}
 
 	@GET
 	@Path("/product/{itemId}")
-	public Product getProduct(@PathParam("itemId") String itemId) {
+	@ApiOperation(
+			value = "Retrieve catalog item based on Item ID."
+	)
+	public Product getProduct(@ApiParam(value = "Unique Item ID of the product", required = true, example = "329299")@PathParam("itemId") String itemId) {
 		Product p = catalogService.getProduct(itemId);
 		if(p == null)
 			throw new NotFoundException();
@@ -45,7 +60,10 @@ public class CatalogResource implements Serializable {
 
 	@POST
 	@Path("/product")
-	public Response add(Product product) {
+	@ApiOperation(
+			value = "Add item to catalog db"
+	)
+	public Response add(@ApiParam(value = "Product that needs to be added", required = true)Product product) {
 		catalogService.addProduct(product);
 		return Response.ok().build();
 	}
