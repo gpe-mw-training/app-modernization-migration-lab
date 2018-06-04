@@ -2,6 +2,7 @@ package com.redhat.coolstore.service.catalog;
 
 import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -97,7 +98,7 @@ public class CatalogServiceTest {
         		 map(p -> p.getItemId()).
         		 collect(Collectors.toSet());
         assertThat(itemIds.size(),is(2));
-        assertThat(itemIds, anyOf(is(itemId1),is(itemId2)));
+        assertThat(itemIds, hasItems(itemId1,itemId2));
     }
 }
 

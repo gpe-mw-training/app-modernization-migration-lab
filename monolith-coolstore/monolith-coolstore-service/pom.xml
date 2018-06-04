@@ -9,7 +9,8 @@
 	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
 	OF ANY KIND, either express or implied. See the License for the specific 
 	language governing permissions and limitations under the License. -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -19,24 +20,14 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>monolith-coolstore</artifactId>
+	<artifactId>monolith-coolstore-service</artifactId>
 	<packaging>war</packaging>
-	<name>monolith-coolstore</name>
-	<description>monolith-coolstore</description>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
-
 		<version.jboss.bom.eap>6.4.0.GA</version.jboss.bom.eap>
-
 		<version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
-
 		<version.surefire.plugin>2.10</version.surefire.plugin>
 		<version.war.plugin>2.1.1</version.war.plugin>
-
 		<version.h2>1.4.187</version.h2>
 	</properties>
 
@@ -64,6 +55,8 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>${version.war.plugin}</version>
 				<configuration>
+					<outputDirectory>deployments</outputDirectory>
+					<warName>ROOT</warName>
 					<!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
@@ -74,14 +67,6 @@
 				<version>${version.surefire.plugin}</version>
 			</plugin>
 
-			<plugin>
-				<groupId>org.jboss.as.plugins</groupId>
-				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>${version.jboss.maven.plugin}</version>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 
@@ -151,6 +136,7 @@
 			<version>3.0.19.Final</version>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>com.eclipsesource.minimal-json</groupId>
 			<artifactId>minimal-json</artifactId>
@@ -158,29 +144,10 @@
 			<scope>test</scope>
 		</dependency>
 
-
 	</dependencies>
 
 
 	<profiles>
-		<profile>
-			<id>openshift</id>
-			<build>
-				<plugins>
-					<plugin>
-						<artifactId>maven-war-plugin</artifactId>
-						<version>${version.war.plugin}</version>
-						<configuration>
-							<outputDirectory>deployments</outputDirectory>
-							<warName>ROOT</warName>
-							<!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
-							<failOnMissingWebXml>false</failOnMissingWebXml>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-
 		<profile>
 			<id>jboss-managed</id>
 			<dependencies>
@@ -191,7 +158,6 @@
 				</dependency>
 			</dependencies>
 		</profile>
-
 	</profiles>
 </project>
 

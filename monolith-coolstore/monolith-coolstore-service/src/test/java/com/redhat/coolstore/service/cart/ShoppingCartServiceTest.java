@@ -9,10 +9,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import com.redhat.coolstore.service.catalog.CatalogService;
+import com.redhat.coolstore.service.shipping.PriceCalculationService;
 import com.redhat.coolstore.model.ShoppingCartItem;
 import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.model.ShoppingCart;
-
 
 import javax.inject.Inject;
 
@@ -35,6 +35,7 @@ public class ShoppingCartServiceTest {
 				.addPackages(false, ShoppingCartService.class.getPackage())
 				.addPackages(false, ShoppingCart.class.getPackage())
 				.addPackages(false, CatalogService.class.getPackage())
+				.addPackages(false, PriceCalculationService.class.getPackage())
 				.addClass(Product.class)
 				.addAsResource("META-INF/test-persistence.xml",  "META-INF/persistence.xml")
 				.addAsWebInfResource("test-ds.xml", "test-ds.xml")
@@ -65,7 +66,7 @@ public class ShoppingCartServiceTest {
 
 	@Test
 	public void testDeleteItemFromCart() {
-		ShoppingCart s = shoppingCartService.addToCart("998", "p2", 3);
+		ShoppingCart scAddition = shoppingCartService.addToCart("998", "p2", 3);
 		
 		ShoppingCart sc = shoppingCartService.deleteItem("998", "p2", 2);
 		

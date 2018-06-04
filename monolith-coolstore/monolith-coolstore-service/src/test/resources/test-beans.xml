@@ -16,5 +16,6 @@
       http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
 	<alternatives>
 		<class>com.redhat.coolstore.service.cart.MockCatalogService</class>
+		<class>com.redhat.coolstore.service.cart.MockPriceCalculationService</class>
 	</alternatives>
 </beans>

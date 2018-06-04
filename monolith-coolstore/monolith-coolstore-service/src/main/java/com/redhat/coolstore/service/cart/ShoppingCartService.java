@@ -4,6 +4,7 @@ import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.model.ShoppingCart;
 import com.redhat.coolstore.model.ShoppingCartItem;
 import com.redhat.coolstore.service.catalog.CatalogService;
+import com.redhat.coolstore.service.shipping.PriceCalculationService;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;

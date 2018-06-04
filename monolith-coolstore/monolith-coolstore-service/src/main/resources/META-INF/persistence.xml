@@ -24,16 +24,4 @@
 			<property name="hibernate.hbm2ddl.import_files" value="META-INF/coolstore.sql" />
 		</properties>
 	</persistence-unit>
-
-	<!-- <persistence-unit name="catalog">
-		<jta-data-source>java:jboss/datasources/CatalogDS</jta-data-source>
-		<exclude-unlisted-classes>false</exclude-unlisted-classes>
-		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
-			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.hbm2ddl.import_files" value="META-INF/catalog.sql" />
-			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
-		</properties>
-
-	</persistence-unit> -->
 </persistence>

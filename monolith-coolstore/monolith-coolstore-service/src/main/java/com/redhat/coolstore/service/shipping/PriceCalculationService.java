@@ -1,10 +1,10 @@
-package com.redhat.coolstore.service.cart;
+package com.redhat.coolstore.service.shipping;
 
-import javax.annotation.ManagedBean;
+import javax.ejb.Stateless;
 
 import com.redhat.coolstore.model.ShoppingCart;
 
-@ManagedBean
+@Stateless
 public class PriceCalculationService {
 
     public void priceShoppingCart(ShoppingCart sc) {
