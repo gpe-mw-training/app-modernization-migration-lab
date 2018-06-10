@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.redhat.coolstore.rest;
+package com.redhat.coolstore.inventory.rest;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
