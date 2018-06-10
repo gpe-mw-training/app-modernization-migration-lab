@@ -13,6 +13,7 @@
     <version.spring-boot>1.5.8.RELEASE</version.spring-boot>
     <version.fabric8-maven-plugin>3.5.28</version.fabric8-maven-plugin>
     <version.spring-cloud-kubernetes>0.2.0.RELEASE</version.spring-cloud-kubernetes>
+    <cxf.version>3.2.0</cxf.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -38,13 +39,18 @@
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
-      <version>3.2.0</version>
+      <version>${cxf.version}</version>
       <exclusions>
         <exclusion>
           <groupId>org.springframework</groupId>
           <artifactId>spring-webmvc</artifactId>
         </exclusion>
       </exclusions>
+    </dependency>
+      <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-rs-service-description-swagger</artifactId>
+        <version>${cxf.version}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.jaxrs</groupId>
