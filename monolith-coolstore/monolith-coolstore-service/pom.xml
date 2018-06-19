@@ -31,6 +31,13 @@
 		<version.h2>1.4.187</version.h2>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>redhat-ga</id>
+			<url>https://maven.repository.redhat.com/ga/</url>
+		</repository>
+	</repositories>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
