@@ -6,3 +6,13 @@ swarm:
         connection-url: jdbc:postgresql://catalog-postgresql:5432/catalogdb
         user-name: jboss
         password: jboss
+  deployment:
+    catalog-service.war:
+      web:
+        login-config:
+          auth-method: KEYCLOAK
+        security-constraints:
+          - url-pattern: /catalog/*
+            methods: [GET]
+            roles: [coolstore]
+

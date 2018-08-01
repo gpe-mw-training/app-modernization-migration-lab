@@ -11,7 +11,8 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<version.wildfly.swarm>7.0.0.redhat-8</version.wildfly.swarm>
+		<version.wildfly.swarm>7.1.0.redhat-77</version.wildfly.swarm><!-- 7.0.0.redhat-8, 
+			7.1.0.redhat-77 -->
 		<version.wildfly.swarm.community>2018.4.1</version.wildfly.swarm.community>
 		<version.postgresql>9.4.1207</version.postgresql>
 		<version.fabric8-maven-plugin>3.5.28</version.fabric8-maven-plugin>
@@ -64,6 +65,11 @@
 			<groupId>org.wildfly.swarm</groupId>
 			<artifactId>jaxrs-jsonp</artifactId>
 		</dependency>
+		<!-- keycloak -->
+		<dependency>
+			<groupId>org.wildfly.swarm</groupId>
+			<artifactId>keycloak</artifactId>
+		</dependency>
 		<!--swagger -->
 		<dependency>
 			<groupId>org.wildfly.swarm</groupId>
@@ -84,9 +90,19 @@
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-client</artifactId>
 			<scope>test</scope>
+			<version>3.5.1.Final</version>
 		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15on</artifactId>
+			<version>1.56.0.redhat-2</version>
+			<scope>test</scope>
+			
+		</dependency>
+
 	</dependencies>
 	<build>
+		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.wildfly.swarm</groupId>
@@ -125,6 +141,7 @@
 				<dependency>
 					<groupId>com.h2database</groupId>
 					<artifactId>h2</artifactId>
+					<version>1.4.197</version>
 				</dependency>
 			</dependencies>
 		</profile>
@@ -152,7 +169,7 @@
 								<config>
 									<wildfly-swarm>
 										<fromMode>isTag</fromMode>
-										<from>redhat-openjdk18-openshift:1.2</from>
+										<from>redhat-openjdk18-openshift:1.4</from>
 									</wildfly-swarm>
 								</config>
 								<excludes>
