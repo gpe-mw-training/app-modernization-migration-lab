@@ -14,7 +14,7 @@
 
 
 	<modules>
-		<module>proprietary-annotations</module>
+		<!-- <module>proprietary-annotations</module> -->
 		<module>monolith-coolstore-service</module>
 	</modules>
 </project>

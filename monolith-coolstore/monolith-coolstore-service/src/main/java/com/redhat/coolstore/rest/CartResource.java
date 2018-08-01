@@ -14,12 +14,12 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.example.proprietary.customAnnotation.ProprietaryInitParam;
-import com.example.proprietary.customAnnotation.ProprietaryServlet;
+/*import com.example.proprietary.customAnnotation.ProprietaryInitParam;
+import com.example.proprietary.customAnnotation.ProprietaryServlet;*/
 import com.redhat.coolstore.model.ShoppingCart;
 import com.redhat.coolstore.service.cart.ShoppingCartService;
 
-@ProprietaryServlet(name="cart", runAs="SuperUser", initParams = { @ProprietaryInitParam (name="cart", value="spring") }, mapping = {"/cart/*"})
+//@ProprietaryServlet(name="cart", runAs="SuperUser", initParams = { @ProprietaryInitParam (name="cart", value="spring") }, mapping = {"/cart/*"})
 @RequestScoped
 @Path("/cart")
 public class CartResource implements Serializable {
