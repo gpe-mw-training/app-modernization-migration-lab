@@ -14,5 +14,5 @@ swarm:
         security-constraints: 
           - url-pattern: /catalog/*
             methods: [GET]
-            roles: [coolstore]
+            roles: [coolstore-test]
   

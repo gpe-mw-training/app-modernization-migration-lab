@@ -101,7 +101,7 @@ public class RestApiTest {
 		WebTarget target = client.target("http://localhost:" + port).path("/catalog/product").path("/123456");
 		//Response response = target.request(MediaType.APPLICATION_JSON).get();
 		Response response = target.request(MediaType.APPLICATION_JSON)
-			    .header("Authorization", "Bearer " + getValidAccessToken("coolstore")).get();
+			    .header("Authorization", "Bearer " + getValidAccessToken("coolstore-test")).get();
 
 		assertThat(response.getStatus(), equalTo(new Integer(200)));
 		JsonObject value = Json.parse(response.readEntity(String.class)).asObject();
@@ -165,7 +165,7 @@ public class RestApiTest {
 			token.type(TokenUtil.TOKEN_TYPE_BEARER);
 			token.subject("testuser");
 			token.issuedAt(issuedAt);
-			token.issuer("https://secure-sso-rhsso.127.0.0.1.nip.io/auth/realms/coolstore");
+			token.issuer("https://secure-sso-rhsso.127.0.0.1.nip.io/auth/realms/coolstore-test");
 			token.expiration(issuedAt + 300);
 			token.setAllowedOrigins(new HashSet<>());
 
