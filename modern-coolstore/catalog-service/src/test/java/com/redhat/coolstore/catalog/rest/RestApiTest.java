@@ -102,7 +102,7 @@ public class RestApiTest {
 		//Response response = target.request(MediaType.APPLICATION_JSON).get();
 		Response response = target.request(MediaType.APPLICATION_JSON)
 			    .header("Authorization", "Bearer " + getValidAccessToken("coolstore-test")).get();
-
+		
 		assertThat(response.getStatus(), equalTo(new Integer(200)));
 		JsonObject value = Json.parse(response.readEntity(String.class)).asObject();
 		assertThat(value.getString("itemId", null), equalTo("123456"));
@@ -115,7 +115,7 @@ public class RestApiTest {
 	@RunAsClient
 	public void testGetProductWhenItemIdDoesNotExist() throws Exception {
 		WebTarget target = client.target("http://localhost:" + port).path("/catalog/product").path("/doesnotexist");
-		Response response = target.request(MediaType.APPLICATION_JSON).get();
+		Response response = target.request(MediaType.APPLICATION_JSON).header("Authorization", "Bearer " + getValidAccessToken("coolstore-test")).get();
 		assertThat(response.getStatus(), equalTo(new Integer(404)));
 	}
 
@@ -163,9 +163,9 @@ public class RestApiTest {
 		private String createAccessToken(String role, int issuedAt) throws Exception {
 			AccessToken token = new AccessToken();
 			token.type(TokenUtil.TOKEN_TYPE_BEARER);
-			token.subject("testuser");
+			token.subject("test-user");
 			token.issuedAt(issuedAt);
-			token.issuer("https://secure-sso-rhsso.127.0.0.1.nip.io/auth/realms/coolstore-test");
+			token.issuer("https://secure-sso-rhte-rhsso.apps.dev39.openshift.opentlc.com/auth/realms/coolstore-test");
 			token.expiration(issuedAt + 300);
 			token.setAllowedOrigins(new HashSet<>());
 

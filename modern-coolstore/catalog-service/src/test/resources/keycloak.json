@@ -1,7 +1,7 @@
 {
   "realm": "coolstore-test",
   "bearer-only": true,
-  "auth-server-url": "https://secure-sso-rhsso.127.0.0.1.nip.io/auth",
-  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3E0ixoAhyCXXz6ROpbx+iSv0nDJkcORIHuwYSxGUlDM+wJ/h+WPxK8nU59kyG+Hk9bc+Cy/FHLW986llNFX/kRIMzmzFhDLu6DjADUA4m5/Xm2XPe1yDS84UNMA1MsecYL676w82j9tRzYOKI7RO0N0BZmsf4nDwEeftmLxyk4uGATuZGsQXj/T6JklPUeo8rrLHgWJHQPSgjkrP3kL8HVqF2ZkZSYJWqSigrTAjyh5+jJ8HQtXNJiaIyT0rHPSCea+kcnnksRINsFvM+Xbbk51nmOrgkPM6XVec5rsEq7axJwFRqAHiXXkl9bmgfRRXtDr6+vwwi+y9bs5odBfzCQIDAQAB",
+  "auth-server-url": "https://secure-sso-rhte-rhsso.apps.dev39.openshift.opentlc.com/auth",
+  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs8q0g5yb1vL/tSLYSEgKnxq4tJxlryLboDeF/Km26lNHTHQda8K/eg1dLhXHTA+uIIZKO8nbfHeHwK5tqP3v9ESPUWwRJdPsQVZ45ZkZCYBKIsyayBy7NPh5BHkkt+bXj5YetJX9x2t+JjEVXBUDt5z0xS37i//FGXdh5KoKJUShux7A5jpbEqK+oSH9OkgYYp5Hrgag5nQ5GoEMZvpa5SjsUd0A9TsMMF0wzq9Q17hawMkhySGYIMjHPp5/hh+s1jwXpVZou8oK5b89PBxoL5COOW23uWfTzEsjq/U6je8P1fCTiHVIHVIa1IGO905BFTmL0KlWKpifuPzNBwtp6wIDAQAB",
   "resource": "coolstore-test"
 }
