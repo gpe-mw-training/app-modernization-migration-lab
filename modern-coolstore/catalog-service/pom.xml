@@ -17,18 +17,6 @@
 		<version.postgresql>9.4.1207</version.postgresql>
 		<version.fabric8-maven-plugin>3.5.28</version.fabric8-maven-plugin>
 	</properties>
-	<repositories>
-		<repository>
-			<id>redhat-ga</id>
-			<url>https://maven.repository.redhat.com/ga/</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>redhat</id>
-			<url>https://maven.repository.redhat.com/ga/</url>
-		</pluginRepository>
-	</pluginRepositories>
 
 	<dependencyManagement>
 		<dependencies>
@@ -97,7 +85,7 @@
 			<artifactId>bcprov-jdk15on</artifactId>
 			<version>1.56.0.redhat-2</version>
 			<scope>test</scope>
-			
+
 		</dependency>
 
 	</dependencies>
@@ -169,7 +157,7 @@
 								<config>
 									<wildfly-swarm>
 										<fromMode>isTag</fromMode>
-										<from>redhat-openjdk18-openshift:1.4</from>
+										<from>redhat-openjdk18-openshift:1.2</from>
 									</wildfly-swarm>
 								</config>
 								<excludes>
@@ -189,4 +177,17 @@
 			</dependencies>
 		</profile>
 	</profiles>
+	<repositories>
+		<repository>
+			<id>redhat-ga</id>
+			<url>https://maven.repository.redhat.com/ga/</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>redhat</id>
+			<url>https://maven.repository.redhat.com/ga/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 </project>
