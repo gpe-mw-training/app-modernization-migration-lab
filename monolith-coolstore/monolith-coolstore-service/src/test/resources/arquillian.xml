@@ -15,7 +15,7 @@
 	<!-- Example configuration for a remote JBoss EAP 6 instance -->
 	<container qualifier="jboss-managed" default="true">
 		<configuration>
-			<property name="jbossHome">/home/jasingh/EAP/jboss-eap-6.4</property>
+			<property name="jbossHome">/opt/eap/</property>
 		</configuration>
 	</container>
 
