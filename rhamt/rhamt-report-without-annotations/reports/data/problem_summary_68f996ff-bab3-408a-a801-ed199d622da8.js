@@ -1,0 +1,33 @@
+MIGRATION_ISSUES_DETAILS["68f996ff-bab3-408a-a801-ed199d622da8"] = [
+{description: "<p>Maven Project Object Model (POM) File<\/p>", ruleID: "DiscoverMavenProjectsRuleProvider_1", issueName: "Maven POM (pom.xml)",
+problemSummaryID: "68f996ff-bab3-408a-a801-ed199d622da8", files: [
+{l:"<a class='' href='pom_xml.63.html?project=692272'>META-INF/maven/org.yaml/snakeyaml/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.html?project=692272'>META-INF/maven/com.redhat.coolstore/monolith-coolstore-service/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.31.html?project=692272'>META-INF/maven/com.fasterxml.jackson.module/jackson-module-jaxb-annotations/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.52.html?project=692272'>META-INF/maven/com.fasterxml.jackson.core/jackson-annotations/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.5.html?project=692272'>META-INF/maven/com.proprietary/proprietary-annotations/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.45.html?project=692272'>META-INF/maven/com.google.guava/guava/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.46.html?project=692272'>META-INF/maven/org.slf4j/slf4j-api/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.60.html?project=692272'>META-INF/maven/com.fasterxml.jackson.datatype/jackson-datatype-joda/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.2.html?project=692272'>META-INF/maven/org.codehaus.woodstox/stax2-api/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.18.html?project=692272'>META-INF/maven/javax.validation/validation-api/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.29.html?project=692272'>META-INF/maven/com.fasterxml.jackson.core/jackson-core/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.75.html?project=692272'>META-INF/maven/org.javassist/javassist/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.51.html?project=692272'>META-INF/maven/com.fasterxml.jackson.dataformat/jackson-dataformat-xml/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.37.html?project=692272'>META-INF/maven/org.reflections/reflections/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.35.html?project=692272'>META-INF/maven/joda-time/joda-time/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.21.html?project=692272'>META-INF/maven/io.swagger/swagger-core/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.68.html?project=692272'>META-INF/maven/io.swagger/swagger-jaxrs/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.71.html?project=692272'>META-INF/maven/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.24.html?project=692272'>META-INF/maven/org.apache.commons/commons-lang3/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.9.html?project=692272'>META-INF/maven/javax.ws.rs/jsr311-api/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.65.html?project=692272'>META-INF/maven/org.webjars/swagger-ui/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.42.html?project=692272'>META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.12.html?project=692272'>META-INF/maven/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.27.html?project=692272'>META-INF/maven/io.swagger/swagger-models/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.13.html?project=692272'>META-INF/maven/io.swagger/swagger-annotations/pom.xml<\/a>", oc:"1"},
+{l:"<a class='' href='pom_xml.56.html?project=692272'>META-INF/maven/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/pom.xml<\/a>", oc:"1"},
+], resourceLinks: [
+]},
+];
+onProblemSummaryLoaded("68f996ff-bab3-408a-a801-ed199d622da8");
