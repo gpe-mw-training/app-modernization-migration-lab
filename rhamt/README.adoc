@@ -1,0 +1,13 @@
+:toc2:
+:numbered:
+
+* using httpd:2.4 to render reports.
+* Based upon rhamt 4.1.0.Final
+* Spin off two httpd instances, one each for rhamt with annotations and one without. The commands to be used are:
++
+[source,sh]
+----
+$ oc process -f ./httpd.json -pSOURCE_REPOSITORY_URL=http://amm-gogs.gogs.svc.cluster.local:3000/gpte/rhte-brownfield-app-migration.git -pSOURCE_REPOSITORY_REF=master -pCONTEXT_DIR=rhamt/rhamt-report | oc create -f -
+
+$ oc process -f ./httpd.json -pSOURCE_REPOSITORY_URL=http://amm-gogs.gogs.svc.cluster.local:3000/gpte/rhte-brownfield-app-migration.git -pSOURCE_REPOSITORY_REF=master -pCONTEXT_DIR=rhamt/rhamt-report-without-annotations | oc create -f -
+----
