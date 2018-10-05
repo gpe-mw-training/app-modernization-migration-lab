@@ -1,33 +1,29 @@
 :toc2:
 :numbered:
 
+.Prerequisite
+* Availability of SCM tool like Gogs 
+
+
 * using httpd:2.4 to render reports.
 * Based upon rhamt 4.1.0.Final
-* Spin off two httpd instances, one each for rhamt with annotations and one without.
-* You use template `httpd.json` for S2I build.
-* Add folders `rhamt-report` & `rhamt-report-without-annotations` in SCM tool like `gogs`
+* Spin off two httpd instances, one each for rhamt reports with annotations and one without.
+* You use `httpd` image in namespace `openshift`.
+* Add lab assets folder in gogs.
 +
 [source,sh]
 ----
-$ cd ~/labs/rhamt/rhamt-report
-$ git remote add rh http://amm-gogs-gogs.127.0.0.1.nip.io/gpte/rhamt-report.git
 
-$ cd ../rhamt-report-without-annotations
-$ git remote add rh http://amm-gogs-gogs.127.0.0.1.nip.io/gpte/rhamt-reports-post-migration.git
-----
-NOTE: Change the gogs path to point to your setup
+$ git remote add rh <internal gogs url>
 
-* Initaite the S2I build
-+
-[source,sh]
-----
-$ oc process -f ./httpd.json -pSOURCE_REPOSITORY_URL=http://amm-gogs.gogs.svc.cluster.local:3000/gpte/rhamt-report.git -pSOURCE_REPOSITORY_REF=master | oc create -f -
+$ oc new-project httpd-server
 
-$ oc process -f ./httpd.json -pSOURCE_REPOSITORY_URL=http://amm-gogs.gogs.svc.cluster.local:3000/gpte/rhamt-reports-post-migration -pSOURCE_REPOSITORY_REF=master -pNAME=post-migration-rhamt-report | oc create -f -
+$ oc new-app httpd~http://amm-gogs.rhte-migration.svc.cluster.local:3000/gpte/rhte-brownfield-app-migration --context-dir=rhamt/rhamt-report --name=rhamt-reports
+
+$ oc new-app httpd~http://amm-gogs.rhte-migration.svc.cluster.local:3000/gpte/rhte-brownfield-app-migration --context-dir=rhamt/rhamt-report-without-annotations  --name=rhamt-report-without-annotations
+
+$ oc expose svc rhamt-reports
+$ oc expose svc rhamt-report-without-annotations
+
 ----
-* Get the `routes` and open in the browser
-+
-[source,sh]
-----
-$ oc get routes
-----
+
