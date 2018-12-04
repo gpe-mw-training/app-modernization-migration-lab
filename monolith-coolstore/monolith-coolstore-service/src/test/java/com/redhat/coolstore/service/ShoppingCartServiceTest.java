@@ -1,4 +1,4 @@
-package com.redhat.coolstore.service.cart;
+package com.redhat.coolstore.service;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;

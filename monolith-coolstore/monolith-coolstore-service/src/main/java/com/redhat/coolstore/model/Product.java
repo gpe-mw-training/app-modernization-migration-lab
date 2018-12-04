@@ -2,68 +2,96 @@ package com.redhat.coolstore.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-
-@Entity
-@XmlRootElement
-@Table(name = "PRODUCT_CATALOG", uniqueConstraints = @UniqueConstraint(columnNames = "itemId"))
 public class Product implements Serializable {
 
-	private static final long serialVersionUID = -7304814269819778382L;
-	@XmlElement
-    @Id
-	private String itemId;
-	@XmlElement
-	private String name;
-	@XmlElement
-	private String description;
-	@XmlElement
-	private double price;
-	
-	public Product() {
-		
+    @Override
+	public String toString() {
+		return "Product [itemId=" + itemId + ", name=" + name + ", desc=" + desc + ", price=" + price + ", location="
+				+ location + ", quantity=" + quantity + ", link=" + link + "]";
 	}
-	
-	public Product(String itemId, String name, String description, double price) {
+
+	private String itemId;
+
+	private String name;
+
+    private String desc;
+
+    private double price;
+
+    private String location;
+
+    private int quantity;
+
+    private String link;
+
+
+    public Product() {
+    }
+    
+    public Product(String itemId, String name, String desc, double price, String location, int quantity, String link) {
 		super();
 		this.itemId = itemId;
 		this.name = name;
-		this.description = description;
+		this.desc = desc;
 		this.price = price;
-	}
-	public String getItemId() {
-		return itemId;
-	}
-	public void setItemId(String itemId) {
-		this.itemId = itemId;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void setPrice(double price) {
-		this.price = price;
+		this.location = location;
+		this.quantity = quantity;
+		this.link = link;
 	}
 
-	@Override
-	public String toString() {
-		return "Product [itemId=" + itemId + ", name=" + name + ", description="
-				+ description + ", price=" + price + "]";
-	}
+    public String getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
 }

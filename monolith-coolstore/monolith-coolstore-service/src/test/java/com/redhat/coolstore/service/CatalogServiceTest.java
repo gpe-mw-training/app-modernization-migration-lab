@@ -1,4 +1,4 @@
-package com.redhat.coolstore.service.catalog;
+package com.redhat.coolstore.service;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.hasItems;

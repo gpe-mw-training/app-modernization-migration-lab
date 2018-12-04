@@ -1,1 +1,0 @@
-insert into PRODUCT_CATALOG (itemId, name, description, price ) values ('123456', 'catalog','CatalogServiceTest', 34)
