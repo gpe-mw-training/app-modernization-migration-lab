@@ -47,15 +47,11 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-
 		</dependencies>
 	</dependencyManagement>
 
 
 	<build>
-
-		<!-- Set the name of the war, used as the context root when the app is 
-			deployed -->
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
@@ -99,6 +95,13 @@
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-jaxrs</artifactId>
+			<!-- The Swageer jax-rs implementation breaks the unit test -->
+			<exclusions>
+				<exclusion>
+					<groupId>javax.ws.rs</groupId>
+					<artifactId>jsr311-api</artifactId>
+				</exclusion>
+			</exclusions>
 			<version>1.5.8</version>
 		</dependency>
 		<dependency>
@@ -106,6 +109,15 @@
 			<artifactId>swagger-ui</artifactId>
 			<version>2.1.4</version>
 		</dependency>
+
+
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-client</artifactId>
+			<scope>test</scope>
+			<version>3.5.1.Final</version>
+		</dependency>
+
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
@@ -119,7 +131,6 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 
-		<!-- test -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -137,12 +148,6 @@
 			<artifactId>arquillian-protocol-servlet</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-client</artifactId>
-			<version>3.0.19.Final</version>
-			<scope>test</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>com.eclipsesource.minimal-json</groupId>
@@ -150,9 +155,14 @@
 			<version>0.9.4</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.7.1</version>
+
+		</dependency>
 
 	</dependencies>
-
 
 	<profiles>
 		<profile>

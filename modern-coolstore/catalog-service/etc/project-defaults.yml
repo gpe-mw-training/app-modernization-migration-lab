@@ -1,8 +1,0 @@
-swarm:
-  datasources:
-    data-sources:
-      CatalogDS:
-        driver-name: postgresql
-        connection-url: jdbc:postgresql://catalog-postgresql:5432/catalogdb
-        user-name: jboss
-        password: jboss
