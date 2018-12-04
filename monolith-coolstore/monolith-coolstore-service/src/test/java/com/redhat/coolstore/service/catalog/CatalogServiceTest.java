@@ -22,7 +22,7 @@ import org.junit.runner.RunWith;
 
 import com.redhat.coolstore.model.CatalogEntity;
 import com.redhat.coolstore.model.Product;
-import com.redhat.coolstore.service.catalog.CatalogService;
+import com.redhat.coolstore.service.CatalogService;
 
 @RunWith(Arquillian.class)
 public class CatalogServiceTest {

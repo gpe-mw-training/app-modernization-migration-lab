@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 import com.example.proprietary.customAnnotation.ProprietaryInitParam;
 import com.example.proprietary.customAnnotation.ProprietaryServlet;
 import com.redhat.coolstore.model.Product;
-import com.redhat.coolstore.service.product.ProductService;
+import com.redhat.coolstore.service.ProductService;
 
 @ProprietaryServlet(name="catalog", runAs="SuperUser", initParams = { @ProprietaryInitParam (name="catalog", value="spring") }, mapping = {"/catalog/*"})
 @RequestScoped

@@ -30,10 +30,10 @@ import org.junit.runner.RunWith;
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonObject;
 import com.redhat.coolstore.model.Product;
-import com.redhat.coolstore.service.cart.ShoppingCartService;
-import com.redhat.coolstore.service.catalog.CatalogService;
-import com.redhat.coolstore.service.product.ProductService;
-import com.redhat.coolstore.service.shipping.PriceCalculationService;
+import com.redhat.coolstore.service.ShoppingCartService;
+import com.redhat.coolstore.service.CatalogService;
+import com.redhat.coolstore.service.ProductService;
+import com.redhat.coolstore.service.PriceCalculationService;
 
 
 

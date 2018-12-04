@@ -11,7 +11,7 @@ import javax.enterprise.inject.Alternative;
 import com.redhat.coolstore.model.CatalogEntity;
 import com.redhat.coolstore.model.InventoryEntity;
 import com.redhat.coolstore.model.Product;
-import com.redhat.coolstore.service.product.ProductService;
+import com.redhat.coolstore.service.ProductService;
 
 @Alternative
 @Stateless

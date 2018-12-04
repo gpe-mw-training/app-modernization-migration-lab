@@ -8,9 +8,10 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.redhat.coolstore.service.catalog.CatalogService;
-import com.redhat.coolstore.service.product.ProductService;
-import com.redhat.coolstore.service.shipping.PriceCalculationService;
+import com.redhat.coolstore.service.CatalogService;
+import com.redhat.coolstore.service.ProductService;
+import com.redhat.coolstore.service.ShoppingCartService;
+import com.redhat.coolstore.service.PriceCalculationService;
 import com.redhat.coolstore.model.ShoppingCartItem;
 import com.redhat.coolstore.model.CatalogEntity;
 import com.redhat.coolstore.model.InventoryEntity;

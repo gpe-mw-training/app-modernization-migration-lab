@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import com.redhat.coolstore.model.ShoppingCart;
 import com.redhat.coolstore.model.ShoppingCartItem;
+import com.redhat.coolstore.service.PriceCalculationService;
 
 
 public class PriceCalculationServiceTest {

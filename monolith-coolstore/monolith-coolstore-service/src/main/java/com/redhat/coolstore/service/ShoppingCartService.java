@@ -1,10 +1,10 @@
-package com.redhat.coolstore.service.cart;
+package com.redhat.coolstore.service;
 
 import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.model.ShoppingCart;
 import com.redhat.coolstore.model.ShoppingCartItem;
-import com.redhat.coolstore.service.product.ProductService;
-import com.redhat.coolstore.service.shipping.PriceCalculationService;
+import com.redhat.coolstore.service.ProductService;
+import com.redhat.coolstore.service.PriceCalculationService;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;

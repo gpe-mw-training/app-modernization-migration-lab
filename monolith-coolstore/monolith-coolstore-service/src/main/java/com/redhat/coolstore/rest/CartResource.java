@@ -19,7 +19,7 @@ import com.example.proprietary.customAnnotation.ProprietaryInitParam;
 import com.example.proprietary.customAnnotation.ProprietaryServlet;
 import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.model.ShoppingCart;
-import com.redhat.coolstore.service.cart.ShoppingCartService;
+import com.redhat.coolstore.service.ShoppingCartService;
 
 @ProprietaryServlet(name="cart", runAs="SuperUser", initParams = { @ProprietaryInitParam (name="cart", value="spring") }, mapping = {"/cart/*"})
 @RequestScoped

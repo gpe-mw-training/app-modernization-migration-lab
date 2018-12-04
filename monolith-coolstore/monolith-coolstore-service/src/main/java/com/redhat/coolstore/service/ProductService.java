@@ -1,4 +1,4 @@
-package com.redhat.coolstore.service.product;
+package com.redhat.coolstore.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,7 +8,7 @@ import javax.inject.Inject;
 
 import com.redhat.coolstore.model.CatalogEntity;
 import com.redhat.coolstore.model.Product;
-import com.redhat.coolstore.service.catalog.CatalogService;
+import com.redhat.coolstore.service.CatalogService;
 
 @Stateless
 public class ProductService {
