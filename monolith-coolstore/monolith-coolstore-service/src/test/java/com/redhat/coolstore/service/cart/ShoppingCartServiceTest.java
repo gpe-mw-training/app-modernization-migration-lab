@@ -9,8 +9,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import com.redhat.coolstore.service.catalog.CatalogService;
+import com.redhat.coolstore.service.product.ProductService;
 import com.redhat.coolstore.service.shipping.PriceCalculationService;
 import com.redhat.coolstore.model.ShoppingCartItem;
+import com.redhat.coolstore.model.CatalogEntity;
+import com.redhat.coolstore.model.InventoryEntity;
 import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.model.ShoppingCart;
 
@@ -33,10 +36,10 @@ public class ShoppingCartServiceTest {
 	public static Archive<?> createDeployment() {
 		return ShrinkWrap.create(WebArchive.class)
 				.addPackages(false, ShoppingCartService.class.getPackage())
-				.addPackages(false, ShoppingCart.class.getPackage())
+				.addPackages(true, ShoppingCart.class.getPackage())
 				.addPackages(false, CatalogService.class.getPackage())
 				.addPackages(false, PriceCalculationService.class.getPackage())
-				.addClass(Product.class)
+				.addPackages(false, ProductService.class.getPackage())
 				.addAsResource("META-INF/test-persistence.xml",  "META-INF/persistence.xml")
 				.addAsWebInfResource("test-ds.xml", "test-ds.xml")
 				.addAsWebInfResource("test-beans.xml","beans.xml")

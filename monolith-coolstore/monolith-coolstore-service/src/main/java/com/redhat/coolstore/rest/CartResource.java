@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -16,6 +17,7 @@ import javax.ws.rs.core.Response;
 
 import com.example.proprietary.customAnnotation.ProprietaryInitParam;
 import com.example.proprietary.customAnnotation.ProprietaryServlet;
+import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.model.ShoppingCart;
 import com.redhat.coolstore.service.cart.ShoppingCartService;
 
@@ -67,6 +69,7 @@ public class CartResource implements Serializable {
 		ShoppingCart cart = shoppingCartService.checkout(cartId);
 		return cart;
 	}
+	
 }
 
 

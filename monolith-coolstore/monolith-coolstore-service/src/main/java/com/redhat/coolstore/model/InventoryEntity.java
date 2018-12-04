@@ -13,7 +13,11 @@ import java.io.Serializable;
 @Table(name = "PRODUCT_INVENTORY", uniqueConstraints = @UniqueConstraint(columnNames = "itemId"))
 public class InventoryEntity implements Serializable {
 
-    private static final long serialVersionUID = -7304814269819778382L;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3323707520047638678L;
+
 
     @XmlElement
     @Id

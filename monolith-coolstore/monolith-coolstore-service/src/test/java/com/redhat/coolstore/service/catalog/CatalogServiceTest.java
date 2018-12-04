@@ -1,20 +1,16 @@
 package com.redhat.coolstore.service.catalog;
 
-import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 
-import org.hamcrest.core.AnyOf;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.Archive;
@@ -24,6 +20,7 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import com.redhat.coolstore.model.CatalogEntity;
 import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.service.catalog.CatalogService;
 
@@ -48,7 +45,7 @@ public class CatalogServiceTest {
     @Test
     public void testGetProduct() throws Exception {
    		assertThat(catalogService, notNullValue());
-        Product product = catalogService.getProduct("123456");
+        CatalogEntity product = catalogService.getCatalogItemById("123456");
         assertThat(product, notNullValue());
         assertThat(product.getName(), is("Redhat"));
     }
@@ -56,7 +53,7 @@ public class CatalogServiceTest {
     @Test
     public void testGetNonExistingCatalog() throws Exception {
         assertThat(catalogService, notNullValue());
-        Product product = catalogService.getProduct("notfound");
+        CatalogEntity product = catalogService.getCatalogItemById("notfound");
         assertThat(product, nullValue());
     }
     
@@ -64,13 +61,13 @@ public class CatalogServiceTest {
     public void testAddProduct() {
     	assertThat(catalogService, notNullValue());
     	
-    	Product p = new Product();
+    	CatalogEntity p = new CatalogEntity();
     	p.setDescription("productDescription1");
     	p.setItemId("999999");
     	p.setName("productName1");
     	p.setPrice(99.0);
-    	catalogService.addProduct(p);
-    	assertThat(catalogService.getProduct("999999").getName(),is("productName1"));
+    	catalogService.addCatalogItem(p);
+    	assertThat(catalogService.getCatalogItemById("999999").getName(),is("productName1"));
     }
     
     @Test
@@ -78,23 +75,23 @@ public class CatalogServiceTest {
     	assertThat(catalogService, notNullValue());
     	
     	String itemId1 = "999998";
-    	Product p1 = new Product();
+    	CatalogEntity p1 = new CatalogEntity();
     	p1.setDescription("productDescription1");
     	p1.setItemId(itemId1);
     	p1.setName("productName1");
     	p1.setPrice(100.0);
-    	catalogService.addProduct(p1);
+    	catalogService.addCatalogItem(p1);
     	
     	String itemId2 = "111111";
-    	Product p2 = new Product();
+    	CatalogEntity p2 = new CatalogEntity();
     	p2.setDescription("productDescription2");
     	p2.setItemId(itemId2);
     	p2.setName("productName2");
     	p2.setPrice(100.0);
     	
-    	catalogService.addProduct(p2);
+    	catalogService.addCatalogItem(p2);
     	
-         Set<String> itemIds = catalogService.getProducts().stream().filter(p -> p.getPrice() == 100.0).
+         Set<String> itemIds = catalogService.getCatalogItems().stream().filter(p -> p.getPrice() == 100.0).
         		 map(p -> p.getItemId()).
         		 collect(Collectors.toSet());
         assertThat(itemIds.size(),is(2));
