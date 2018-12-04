@@ -1,4 +1,4 @@
-package com.redhat.coolstore.service.cart;
+package com.redhat.coolstore.service;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -13,9 +13,6 @@ import com.redhat.coolstore.service.ProductService;
 import com.redhat.coolstore.service.ShoppingCartService;
 import com.redhat.coolstore.service.PriceCalculationService;
 import com.redhat.coolstore.model.ShoppingCartItem;
-import com.redhat.coolstore.model.CatalogEntity;
-import com.redhat.coolstore.model.InventoryEntity;
-import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.model.ShoppingCart;
 
 import javax.inject.Inject;

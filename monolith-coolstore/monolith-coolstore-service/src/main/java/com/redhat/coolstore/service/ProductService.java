@@ -36,9 +36,6 @@ public class ProductService {
          prod.setName(entity.getName());
          prod.setDesc(entity.getDescription());
          prod.setPrice(entity.getPrice());
-         prod.setLocation(entity.getInventory().getLocation());
-         prod.setLink(entity.getInventory().getLink());
-         prod.setQuantity(entity.getInventory().getQuantity());
          return prod;
     }
 

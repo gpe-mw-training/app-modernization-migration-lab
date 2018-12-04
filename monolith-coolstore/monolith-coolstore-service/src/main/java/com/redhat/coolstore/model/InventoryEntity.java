@@ -1,4 +1,4 @@
-package com.redhat.coolstore.model;
+/*package com.redhat.coolstore.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,9 +13,9 @@ import java.io.Serializable;
 @Table(name = "PRODUCT_INVENTORY", uniqueConstraints = @UniqueConstraint(columnNames = "itemId"))
 public class InventoryEntity implements Serializable {
 
-    /**
+    *//**
 	 * 
-	 */
+	 *//*
 	private static final long serialVersionUID = -3323707520047638678L;
 
 
@@ -84,3 +84,4 @@ public class InventoryEntity implements Serializable {
         return "Inventory [itemId=" + itemId + ", availability=" + quantity + "/" + location + " link=" + link + "]";
     }
 }
+*/

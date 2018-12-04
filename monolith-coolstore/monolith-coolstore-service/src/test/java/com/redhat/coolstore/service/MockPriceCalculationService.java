@@ -1,4 +1,4 @@
-package com.redhat.coolstore.service.cart;
+package com.redhat.coolstore.service;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;

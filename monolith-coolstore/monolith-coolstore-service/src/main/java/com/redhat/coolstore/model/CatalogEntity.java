@@ -32,18 +32,12 @@ public class CatalogEntity implements Serializable {
 	@XmlElement
 	private double price;
 
-	@OneToOne(cascade = CascadeType.ALL,fetch=FetchType.EAGER)
-	@PrimaryKeyJoinColumn
-	private InventoryEntity inventory;
-
-
 	public CatalogEntity() {
 
 	}
 
-	public CatalogEntity(String itemId, String name, String description, double price,InventoryEntity inventory) {
+	public CatalogEntity(String itemId, String name, String description, double price) {
 		super();
-		this.inventory = inventory;
 		this.itemId = itemId;
 		this.name = name;
 		this.description = description;
@@ -73,15 +67,6 @@ public class CatalogEntity implements Serializable {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
-	public InventoryEntity getInventory() {
-		return inventory;
-	}
-
-	public void setInventory(InventoryEntity inventory) {
-		this.inventory = inventory;
-	}
-
 
 	@Override
 	public String toString() {

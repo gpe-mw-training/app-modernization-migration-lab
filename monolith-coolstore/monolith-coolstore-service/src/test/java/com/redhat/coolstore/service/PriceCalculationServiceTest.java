@@ -1,4 +1,4 @@
-package com.redhat.coolstore.service.shipping;
+package com.redhat.coolstore.service;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;

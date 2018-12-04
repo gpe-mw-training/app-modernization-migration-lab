@@ -7,7 +7,7 @@ public class Product implements Serializable {
     @Override
 	public String toString() {
 		return "Product [itemId=" + itemId + ", name=" + name + ", desc=" + desc + ", price=" + price + ", location="
-				+ location + ", quantity=" + quantity + ", link=" + link + "]";
+				+ "]";
 	}
 
 	private String itemId;
@@ -18,25 +18,16 @@ public class Product implements Serializable {
 
     private double price;
 
-    private String location;
-
-    private int quantity;
-
-    private String link;
-
 
     public Product() {
     }
     
-    public Product(String itemId, String name, String desc, double price, String location, int quantity, String link) {
+    public Product(String itemId, String name, String desc, double price) {
 		super();
 		this.itemId = itemId;
 		this.name = name;
 		this.desc = desc;
 		this.price = price;
-		this.location = location;
-		this.quantity = quantity;
-		this.link = link;
 	}
 
     public String getItemId() {
@@ -71,27 +62,4 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
 }
