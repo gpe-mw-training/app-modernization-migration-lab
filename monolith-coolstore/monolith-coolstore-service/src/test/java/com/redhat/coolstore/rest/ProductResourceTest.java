@@ -57,7 +57,7 @@ public class ProductResourceTest {
 	@RunAsClient
 	public void testGetProduct() throws Exception {
 		Client client = ClientBuilder.newClient();
-		WebTarget target = client.target(URI.create(new URL(baseURL, "/api/products/123456").toExternalForm()));
+		WebTarget target = client.target(URI.create(new URL(baseURL, "/api/product/123456").toExternalForm()));
 		Response response = target.request(MediaType.APPLICATION_JSON).get();
 		assertThat(response.getStatus(), equalTo(new Integer(200)));
 		JsonObject value = Json.parse(response.readEntity(String.class)).asObject();
@@ -65,8 +65,6 @@ public class ProductResourceTest {
 		assertThat(value.getString("name", null), equalTo("Redhat"));
 		assertThat(value.getString("desc",null), equalTo("Fedora"));
 		assertThat(value.getDouble("price", 0.0), equalTo(new Double(34.99)));
-		assertThat(value.getString("location", null), equalTo("Tokyo"));
-		assertThat(value.getInt("quantity", -1), equalTo(59));
 	}
 	
 }
