@@ -1,10 +1,10 @@
-package com.redhat.coolstore.service.cart;
+package com.redhat.coolstore.service;
 
 import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.model.ShoppingCart;
 import com.redhat.coolstore.model.ShoppingCartItem;
-import com.redhat.coolstore.service.catalog.CatalogService;
-import com.redhat.coolstore.service.shipping.PriceCalculationService;
+import com.redhat.coolstore.service.ProxyProductService;
+import com.redhat.coolstore.service.PriceCalculationService;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -17,7 +17,7 @@ import java.util.Map;
 public class ShoppingCartService {
 
     @Inject
-    private CatalogService catalogService;
+    private ProxyProductService productService;
 
     @Inject
     private PriceCalculationService priceCalculationService;
@@ -40,7 +40,7 @@ public class ShoppingCartService {
     public Product getProduct(String itemId) {
     	Product product = productMap.get(itemId);
         if (product == null) {
-            product = catalogService.getProduct(itemId);
+            product = productService.getProductByItemId(itemId);
             productMap.put(itemId, product);
         }
         return product;

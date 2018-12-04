@@ -2,6 +2,7 @@ package com.redhat.coolstore.catalog.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,13 +16,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = -7304814269819778382L;
+	
 	@XmlElement
-    @Id
+        @Id
 	private String itemId;
+	
 	@XmlElement
 	private String name;
+	
 	@XmlElement
 	private String description;
+	
 	@XmlElement
 	private double price;
 	

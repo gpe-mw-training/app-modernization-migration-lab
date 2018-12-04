@@ -24,12 +24,12 @@ public class InventoryResource  {
 	@Path("{itemId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public InventoryEntity getInventory(@PathParam("itemId") String itemId) {
-                InventoryEntity inventory = inventoryService.getInventory(itemId);
+		InventoryEntity inventory = inventoryService.getInventory(itemId);
 		if (inventory == null) {
-            throw new NotFoundException();
-        } else {
-            return inventory;
-        }
+			throw new NotFoundException();
+		} else {
+			return inventory;
+		}
 
 	}
 

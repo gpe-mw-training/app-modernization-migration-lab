@@ -49,7 +49,7 @@ public class CartResourceTest {
 
     @Before
     public void beforeTest() throws Exception {
-        RestAssured.baseURI = String.format("http://localhost:%d/cart", port);
+        RestAssured.baseURI = String.format("http://localhost:%d/api/cart", port);
         ReflectionTestUtils.setField(catalogService, null, "catalogServiceUrl", "http://localhost:" + wireMockRule.port(), null);
         initWireMockServer();
     }
