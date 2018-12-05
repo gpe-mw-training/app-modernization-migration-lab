@@ -19,7 +19,7 @@ import com.redhat.coolstore.service.ProductService;
 
 @ProprietaryServlet(name="catalog", runAs="SuperUser", initParams = { @ProprietaryInitParam (name="catalog", value="spring") }, mapping = {"/catalog/*"})
 @RequestScoped
-@Path("/products")
+@Path("/product")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class ProductResource implements Serializable  {
@@ -40,7 +40,7 @@ public class ProductResource implements Serializable  {
 
     @GET
     @Path("/{itemId}")
-    public Product getCart(@PathParam("itemId") String itemId) {
+    public Product getProduct(@PathParam("itemId") String itemId) {
         return pm.getProductByItemId(itemId);
     }
 

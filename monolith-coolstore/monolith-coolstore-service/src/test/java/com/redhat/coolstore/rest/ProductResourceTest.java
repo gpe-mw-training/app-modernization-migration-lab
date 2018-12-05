@@ -57,7 +57,7 @@ public class ProductResourceTest {
 	@RunAsClient
 	public void testGetProduct() throws Exception {
 		Client client = ClientBuilder.newClient();
-		WebTarget target = client.target(URI.create(new URL(baseURL, "/api/products/123456").toExternalForm()));
+		WebTarget target = client.target(URI.create(new URL(baseURL, "/api/product/123456").toExternalForm()));
 		Response response = target.request(MediaType.APPLICATION_JSON).get();
 		assertThat(response.getStatus(), equalTo(new Integer(200)));
 		JsonObject value = Json.parse(response.readEntity(String.class)).asObject();
