@@ -14,7 +14,6 @@ public class RestApplication extends Application {
     public Set<Class<?>> getClasses() {
         Set<Class<?>> resources = new HashSet();
        
-        resources.add(ProductResource.class);
         resources.add(CartResource.class);
         
         resources.add(io.swagger.jaxrs.listing.ApiListingResource.class);

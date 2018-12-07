@@ -1,2 +1,0 @@
-insert into PRODUCT_CATALOG (itemId, name, description, price ) values ('123456', 'Redhat','Fedora', 34.99)
---insert into PRODUCT_INVENTORY (itemId, link, location, quantity) values ('123456', 'http://maps.google.com/?q=Tokyo', 'Tokyo', 59)

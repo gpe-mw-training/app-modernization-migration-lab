@@ -3,7 +3,7 @@ package com.redhat.coolstore.service;
 import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.model.ShoppingCart;
 import com.redhat.coolstore.model.ShoppingCartItem;
-import com.redhat.coolstore.service.ProductService;
+import com.redhat.coolstore.service.ProxyProductService;
 import com.redhat.coolstore.service.PriceCalculationService;
 
 import javax.ejb.Stateless;
@@ -17,7 +17,7 @@ import java.util.Map;
 public class ShoppingCartService {
 
     @Inject
-    private ProductService productService;
+    private ProxyProductService productService;
 
     @Inject
     private PriceCalculationService priceCalculationService;

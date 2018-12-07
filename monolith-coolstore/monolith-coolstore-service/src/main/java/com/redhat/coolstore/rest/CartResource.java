@@ -19,6 +19,7 @@ import com.example.proprietary.customAnnotation.ProprietaryInitParam;
 import com.example.proprietary.customAnnotation.ProprietaryServlet;
 import com.redhat.coolstore.model.Product;
 import com.redhat.coolstore.model.ShoppingCart;
+import com.redhat.coolstore.service.ProxyProductServiceImpl;
 import com.redhat.coolstore.service.ShoppingCartService;
 
 @ProprietaryServlet(name="cart", runAs="SuperUser", initParams = { @ProprietaryInitParam (name="cart", value="spring") }, mapping = {"/cart/*"})
@@ -35,9 +36,9 @@ public class CartResource implements Serializable {
 	@Path("/{cartId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public ShoppingCart getCart(@PathParam("cartId") String cartId) {
-
 		return shoppingCartService.getShoppingCart(cartId);
 	}
+	
 
 	@POST
 	@Path("/{cartId}/{itemId}/{quantity}")

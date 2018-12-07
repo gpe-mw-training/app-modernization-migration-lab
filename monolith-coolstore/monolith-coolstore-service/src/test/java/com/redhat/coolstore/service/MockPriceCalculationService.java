@@ -7,7 +7,7 @@ import com.redhat.coolstore.model.ShoppingCart;
 
 @Alternative
 @Stateless
-public class MockPriceCalculationService{
+public class MockPriceCalculationService extends PriceCalculationService {
 
     public void priceShoppingCart(ShoppingCart sc) {
        sc.setCartTotal(10.0);
