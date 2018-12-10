@@ -1,4 +1,4 @@
-package com.redhat.coolstore.inventory;
+package com.redhat.coolstore.inventory.rest;
 
 import java.util.HashSet;
 import java.util.Set;
