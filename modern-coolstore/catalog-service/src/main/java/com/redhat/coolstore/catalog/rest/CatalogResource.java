@@ -17,14 +17,14 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
 @RequestScoped
-@Path("/catalog")
+@Path("/product")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @Api(
 		value = "The catalog service",
 		description = "This API will list all catalog items",
 		produces = MediaType.APPLICATION_JSON,
-		basePath = "/catalog"
+		basePath = "/product"
 		)
 public class CatalogResource implements Serializable {
 
@@ -37,7 +37,7 @@ public class CatalogResource implements Serializable {
 	private CatalogService catalogService;
 
 	@GET
-	@Path("/products")
+	@Path("/")
 	@ApiOperation(
 			value = "Retrieve all catalog items"	            
 			)
@@ -46,7 +46,7 @@ public class CatalogResource implements Serializable {
 	}
 
 	@GET
-	@Path("/product/{itemId}")
+	@Path("/{itemId}")
 	@ApiOperation(
 			value = "Retrieve catalog item based on Item ID."
 	)
@@ -59,7 +59,7 @@ public class CatalogResource implements Serializable {
 	}
 
 	@POST
-	@Path("/product")
+	@Path("/")
 	@ApiOperation(
 			value = "Add item to catalog db"
 	)
