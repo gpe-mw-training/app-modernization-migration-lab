@@ -1,0 +1,17 @@
+= OCP App Migration
+
+== Execution using localhost oc client
+
+. Via the oc utility, ensure you are authenticated into a remote OCP environment as a cluster admin
+  
+. Execute this ansible to provision:
++
+-----
+$ ansible-playbook -i localhost, -c local cnd_migration.yml
+-----
+
+. Execute this ansible to delete:
++
+-----
+$ ansible-playbook -i localhost, -c local cnd_migration.yml -e ACTION=destroy
+-----

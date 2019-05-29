@@ -1,0 +1,38 @@
+---
+
+# #########         Unconstrained project             ##############
+- name: Create unconstrained project =  {{ocp_unconstrained_project}}
+  shell: "oc adm new-project {{ocp_unconstrained_project}} --admin={{ ocp_username }}"
+
+- name: Annotate the empty project as requested by user
+  shell: "oc annotate namespace {{ ocp_unconstrained_project }} openshift.io/requester={{ ocp_username }} --overwrite"
+
+- name: Create a new limitrange
+  template:
+    src: templates/limitrange.yaml
+    dest: /tmp/{{ocp_unconstrained_project}}_limitrange.yaml
+- shell: |
+    oc create -f /tmp/{{ocp_unconstrained_project}}_limitrange.yaml -n {{ocp_unconstrained_project}}
+
+# ###############################################################
+
+
+
+# #########             Constraint project          ##############
+
+- name: Create project; project =  {{ocp_constraints_project}}
+  shell: "oc adm new-project {{ ocp_constraints_project }} --admin={{ ocp_username }}"
+
+- name: Annotate the empty project as requested by user
+  shell: "oc annotate namespace {{ ocp_constraints_project }} openshift.io/requester={{ ocp_username }} --overwrite"
+
+- name: Create a new limitrange
+  template:
+    src: templates/constraints_limitrange.yaml
+    dest: /tmp/{{ ocp_constraints_project }}_limitrange.yaml
+- shell: |
+    oc create -f /tmp/{{ ocp_constraints_project }}_limitrange.yaml -n {{ ocp_constraints_project }}
+
+
+# ###############################################################
+
